@@ -5,6 +5,18 @@ VisualStudioVersion = 17.5.33627.172
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ajgre-technical-interview", "ajgre-technical-interview.csproj", "{4C0BCE9E-A4A4-4A97-BB77-3EE7699F037A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AJGRE.Domain", "..\AJRE.Domain\AJGRE.Domain.csproj", "{5B3E0263-51F6-4271-8222-AA6187CB0AD2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AJGRE.Application", "..\AJGRE.Application\AJGRE.Application.csproj", "{A80B80A4-5858-44AB-A6E8-92731A18FAFF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AJGRE.Infrastructure", "..\AJGRE.Infrastructure\AJGRE.Infrastructure.csproj", "{00D2D57C-2495-4766-A38D-D8AB3571F10E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AJGRE.Application.Tests", "..\AJGRE.Application.Tests\AJGRE.Application.Tests.csproj", "{4235CF2A-C986-4C38-9397-5762F576172B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AJGRE.WebApi.Tests", "..\AJGRE.WebApi.Tests\AJGRE.WebApi.Tests.csproj", "{51648979-BF80-41D2-9752-1BD97B1DE56B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,9 +27,33 @@ Global
 		{4C0BCE9E-A4A4-4A97-BB77-3EE7699F037A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C0BCE9E-A4A4-4A97-BB77-3EE7699F037A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C0BCE9E-A4A4-4A97-BB77-3EE7699F037A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B3E0263-51F6-4271-8222-AA6187CB0AD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B3E0263-51F6-4271-8222-AA6187CB0AD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B3E0263-51F6-4271-8222-AA6187CB0AD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B3E0263-51F6-4271-8222-AA6187CB0AD2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A80B80A4-5858-44AB-A6E8-92731A18FAFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A80B80A4-5858-44AB-A6E8-92731A18FAFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A80B80A4-5858-44AB-A6E8-92731A18FAFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A80B80A4-5858-44AB-A6E8-92731A18FAFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00D2D57C-2495-4766-A38D-D8AB3571F10E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00D2D57C-2495-4766-A38D-D8AB3571F10E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00D2D57C-2495-4766-A38D-D8AB3571F10E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00D2D57C-2495-4766-A38D-D8AB3571F10E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4235CF2A-C986-4C38-9397-5762F576172B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4235CF2A-C986-4C38-9397-5762F576172B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4235CF2A-C986-4C38-9397-5762F576172B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4235CF2A-C986-4C38-9397-5762F576172B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51648979-BF80-41D2-9752-1BD97B1DE56B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51648979-BF80-41D2-9752-1BD97B1DE56B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51648979-BF80-41D2-9752-1BD97B1DE56B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51648979-BF80-41D2-9752-1BD97B1DE56B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4235CF2A-C986-4C38-9397-5762F576172B} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{51648979-BF80-41D2-9752-1BD97B1DE56B} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CF39E593-2D0F-4B41-B320-443070DDD858}

@@ -1,4 +1,5 @@
-﻿using ajgre_technical_interview.Services;
+﻿using AJGRE.Application.DTOs;
+using AJGRE.Application.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ajgre_technical_interview.Controllers
@@ -7,27 +8,33 @@ namespace ajgre_technical_interview.Controllers
     [Route("api/sanctioned-entities")]
     public class SanctionedEntitiesController : ControllerBase
     {
-        private readonly IDatabaseService _databaseService;
 
-        public SanctionedEntitiesController(IDatabaseService databaseService)
-        {
-            _databaseService = databaseService;
-        }
-
+        private readonly ISanctionedEntityService _service;
+        public SanctionedEntitiesController(ISanctionedEntityService service) => _service = service;
 
         [HttpGet]
-        public async Task<IActionResult> GetSanctionedEntities()
+        public async Task<ActionResult<IEnumerable<EntityDto>>> ListAll()
+        {
+            var list = await _service.ListAllAsync();
+            return Ok(list);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> Create([FromBody] EntityDto dto)
         {
             try
             {
-                var entities = await _databaseService.GetSanctionedEntitiesAsync();
-                return Ok(entities);
+                await _service.AddAsync(dto);
+                return CreatedAtAction(nameof(ListAll), null);
             }
-            catch (Exception ex)
+            catch (ArgumentException ex)
             {
-                return Problem(ex.Message);
+                return BadRequest(ex.Message);
             }
-
+            catch (InvalidOperationException ex)
+            {
+                return Conflict(ex.Message);
+            }
         }
     }
 }
