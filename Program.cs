@@ -28,7 +28,7 @@ builder.Services.Configure<ApiBehaviorOptions>(options =>
 });
 
 builder.Services.AddInfrastructure();
-builder.Services.AddScoped<ICounterService,CounterService>();
+
 builder.Services.AddScoped<ISanctionedEntityService,SanctionedEntityService>();
 
 var app = builder.Build();

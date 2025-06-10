@@ -1,0 +1,40 @@
+<div class="add-entity row justify-content-center">
+  <div class="col-4">
+    <h2>Add Sanctioned Entity</h2>
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <div class="mb-3">
+        <label>Name</label>
+        <input formControlName="name" class="form-control" />
+        <div *ngIf="form.get('name')?.hasError('required') && form.get('name')?.touched" class="text-danger">
+          Name is required.
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label>Domicile</label>
+        <input formControlName="domicile" class="form-control" />
+        <div *ngIf="form.get('domicile')?.hasError('required') && form.get('domicile')?.touched" class="text-danger">
+          Domicile is required.
+        </div>
+      </div>
+
+      <div *ngIf="form.hasError('duplicate')" class="alert alert-danger">
+        An entity with this Name and Domicile already exists.
+      </div>
+
+       <div class="form-check form-switch mb-3">
+        <input type="checkbox"
+               class="form-check-input"
+               id="acceptedSwitch"
+               formControlName="accepted">
+        <label class="form-check-label" for="acceptedSwitch">Accepted?</label>
+      </div>
+
+      <button class="btn btn-success" type="submit" [disabled]="form.invalid">Add</button>
+
+      <div *ngIf="error" class="alert alert-danger mt-3">
+        {{ error }}
+      </div>
+    </form>
+  </div>
+</div>

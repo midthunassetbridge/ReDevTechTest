@@ -23,12 +23,23 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\app\models\counter-model.ts" />
+    <None Remove="ClientApp\src\app\services\counter.service.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ClientApp\src\app\components\NewFolder\" />
     <Folder Include="Models\" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\AJGRE.Application\AJGRE.Application.csproj" />
     <ProjectReference Include="..\AJGRE.Infrastructure\AJGRE.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\models\counter-model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\services\counter.service.ts" />
   </ItemGroup>
 
     <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

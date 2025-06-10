@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { SanctionedEntity } from '../../models/sanctioned-entity';
+import { SanctionedEntity } from '../../../models/sanctioned-entity';
 import { SanctionedEntitiesService } from '../../services/sanctioned-entities.service';
+import { ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-sanctioned-entities',
@@ -9,9 +11,11 @@ import { SanctionedEntitiesService } from '../../services/sanctioned-entities.se
 export class SanctionedEntitiesComponent {
   public entities: SanctionedEntity[] = [];
 
-  constructor(private entitiesService: SanctionedEntitiesService) {
-    entitiesService.getSanctionedEntities().subscribe(entities => {
-      this.entities = entities;
-    });
+  constructor(private route: ActivatedRoute) {
+    
+  }
+
+  ngOnInit() {
+    this.entities = this.route.snapshot.data['entities'];
   }
 }
