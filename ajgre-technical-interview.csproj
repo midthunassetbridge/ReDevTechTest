@@ -17,8 +17,28 @@
 
   <ItemGroup>
     <!-- Don't publish the SPA source files, but do show them in the project files list -->
+    <Compile Remove="AJGRE.Application.Tests\**" />
+    <Compile Remove="AJGRE.Application\**" />
+    <Compile Remove="AJGRE.Infrastructure\**" />
+    <Compile Remove="AJGRE.WebApi.Tests\**" />
+    <Compile Remove="AJRE.Domain\**" />
     <Content Remove="$(SpaRoot)**" />
+    <Content Remove="AJGRE.Application.Tests\**" />
+    <Content Remove="AJGRE.Application\**" />
+    <Content Remove="AJGRE.Infrastructure\**" />
+    <Content Remove="AJGRE.WebApi.Tests\**" />
+    <Content Remove="AJRE.Domain\**" />
+    <EmbeddedResource Remove="AJGRE.Application.Tests\**" />
+    <EmbeddedResource Remove="AJGRE.Application\**" />
+    <EmbeddedResource Remove="AJGRE.Infrastructure\**" />
+    <EmbeddedResource Remove="AJGRE.WebApi.Tests\**" />
+    <EmbeddedResource Remove="AJRE.Domain\**" />
     <None Remove="$(SpaRoot)**" />
+    <None Remove="AJGRE.Application.Tests\**" />
+    <None Remove="AJGRE.Application\**" />
+    <None Remove="AJGRE.Infrastructure\**" />
+    <None Remove="AJGRE.WebApi.Tests\**" />
+    <None Remove="AJRE.Domain\**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
   </ItemGroup>
 
@@ -33,8 +53,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AJGRE.Application\AJGRE.Application.csproj" />
-    <ProjectReference Include="..\AJGRE.Infrastructure\AJGRE.Infrastructure.csproj" />
+    <ProjectReference Include="AJGRE.Application\AJGRE.Application.csproj" />
+    <ProjectReference Include="AJGRE.Infrastructure\AJGRE.Infrastructure.csproj" />
   </ItemGroup>
 
   <ItemGroup>
